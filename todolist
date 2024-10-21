@@ -1,5 +1,3 @@
-# todo_list.py
-
 def show_tasks(tasks):
     if not tasks:
         print("No tasks to show!")

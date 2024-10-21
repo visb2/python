@@ -1,0 +1,40 @@
+# todo_list.py
+
+def show_tasks(tasks):
+    if not tasks:
+        print("No tasks to show!")
+    else:
+        for idx, task in enumerate(tasks, 1):
+            print(f"{idx}. {task}")
+
+def add_task(tasks):
+    task = input("Enter a task: ")
+    tasks.append(task)
+    print(f"Task '{task}' added!")
+
+def remove_task(tasks):
+    task_no = int(input("Enter the task number to remove: "))
+    if 0 < task_no <= len(tasks):
+        removed = tasks.pop(task_no - 1)
+        print(f"Task '{removed}' removed!")
+    else:
+        print("Invalid task number!")
+
+def main():
+    tasks = []
+    while True:
+        print("\n1. View tasks\n2. Add task\n3. Remove task\n4. Exit")
+        choice = input("Choose an option: ")
+        if choice == '1':
+            show_tasks(tasks)
+        elif choice == '2':
+            add_task(tasks)
+        elif choice == '3':
+            remove_task(tasks)
+        elif choice == '4':
+            break
+        else:
+            print("Invalid option!")
+
+if __name__ == "__main__":
+    main()
